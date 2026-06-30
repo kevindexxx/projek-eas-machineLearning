@@ -19,16 +19,16 @@ def predict():
         # Prediksi
         prediction = model.predict(final_features)
 
-        if prediction[0] == 1.0:
-            output = "Pasien Beresiko Terkena Penyakit Jantung"
+        if prediction[0] == 0.0:
+            output = "(Tinggi) Pasien Beresiko Terkena Penyakit Jantung"
         else:
-            output = "Pasien Tidak Beresiko Terkena Penyakit Jantung"
+            output = "(Rendah) Pasien Tidak Beresiko Terkena Penyakit Jantung"
 
         return render_template('index.html', heart_risk=output)
     except Exception as e:
         return render_template('index.html', heart_risk=f"Terjadi Kesalahan Input: {str(e)}")
     
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(debug=True)
 
         
