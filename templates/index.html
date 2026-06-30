@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Resiko Penyakit Jantung</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Sistem Prediksi Resiko Penyakit Jantung</h2>
+        <form action="{{url_for('predict')}}" method ="post">
+            <div class="grid-form">
+                <div class="form-group">
+                    <label> Chest Pain (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Chest_Pain" required>
+                </div>
+                <div class="form-group">
+                    <label> Shortness of Breath (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Short_of_Breath" required>
+                </div>
+                <div class="form-group">
+                    <label> Fatigue (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Fatigue" required>
+                </div>
+                <div class="form-group">
+                    <label> Palpitations (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Palpitations" required>
+                </div>
+                <div class="form-group">
+                    <label> Dizziness (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Dizziness" required>
+                </div>
+                <div class="form-group">
+                    <label> Swelling (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Swelling" required>
+                </div>
+                <div class="form-group">
+                    <label> Pain arm/Jaw/Back (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Pain_Arms_Jaw_Back" required>
+                </div>
+                <div class="form-group">
+                    <label> Cold Sweats/Nausea (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Cold_Sweats_Nausea" required>
+                </div>
+                <div class="form-group">
+                    <label> High BP (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="High_BP" required>
+                </div>
+                <div class="form-group">
+                    <label> High Cholesterol (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="High_Cholesterol" required>
+                </div>
+                <div class="form-group">
+                    <label> Diabetes (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Diabetes" required>
+                </div>
+                <div class="form-group">
+                    <label> Smoking (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Smoking" required>
+                </div>
+                <div class="form-group">
+                    <label> Sedentary Lifestyle (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Sedentary_Lifestyle" required>
+                </div>
+                <div class="form-group">
+                    <label> Family History(0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Family_History" required>
+                </div>
+                <div class="form-group">
+                    <label> Chronic Stress (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Chronic_Stress" required>
+                </div>
+                <div class="form-group">
+                    <label> Gender (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Gender" required>
+                </div>
+                <div class="form-group">
+                    <label> Age (0 = Tidak, 1 = Ya)</label>
+                    <input type="number" step="any" name="Age" required>
+                </div>
+            </div>
+            <button type="submit">Prediksi Resiko</button>
+        </form>
+        {% if heart_risk %}
+        <div class="result">
+            <strong>Tingkat Resiko : </strong> {{heart_risk}}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
